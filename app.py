@@ -15,8 +15,8 @@ from transformers import (
 import threading
 from transformers import RobertaForSequenceClassification, RobertaTokenizer
 from queue import Queue
-# Define data structure of input data and feedback results
-from dataclasses import dataclass
+
+# from dataclasses import dataclass
 from typing import Dict, Optional
 from huggingface_hub import login
 
@@ -36,7 +36,6 @@ load_dotenv()
 # ================== Flask App ==================
 
 app = Flask(__name__)
-# app.secret_key = "ABCD"
 app.secret_key = os.getenv("FLASK_SECRET_KEY")
 
 app.config['UPLOAD_FOLDER'] = './records'
@@ -63,12 +62,6 @@ whisper_pipe = pipeline(
     device=device,
 )
 
-# connection = mysql.connector.connect(
-#     host='db4free.net',
-#     user='hyeongjin',
-#     password='abcd1234',
-#     database='opic_automatic'
-# )
 connection = mysql.connector.connect(
     host=os.getenv('DB_HOST'),
     user=os.getenv('DB_USER'),
@@ -76,8 +69,6 @@ connection = mysql.connector.connect(
     database=os.getenv('DB_DATABASE')
 )
 
-# HUGGINGFACE_API_TOKEN = "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"
-# login(token=HUGGINGFACE_API_TOKEN)
 HUGGINGFACE_API_TOKEN = os.getenv("HUGGINGFACE_API_TOKEN")
 login(token=HUGGINGFACE_API_TOKEN)
 
