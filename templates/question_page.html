@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Page</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='question_page.css') }}">
+</head>
+<body>
+    <div class="content">
+        <h2 class="question-title">Question {{question_page_number}}</h2>
+        <div class="test-area">
+            <div class="left">
+                <div class="question-image">
+                    <img src="https://github.com/hyeongjinnnnn/opic-automatic-grading/assets/74162198/1432bdad-dbc7-4d63-8c33-af50d98a233e" alt="Ava" class="ava">
+                </div>
+                <div class="question-gauge">
+                    <div class="volume-meter" id="volumeMeter">
+                        <div class="volume-value" id="volumeValue"></div>
+                    </div>
+                    <img class="mic-icon" src="https://github.com/hyeongjinnnnn/opic-automatic-grading/assets/74162198/f66a8e1c-0925-406d-9a84-393dd0ba6d0c">
+                </div>
+                <div class="question-buttons">
+                    <button id="questionListen">
+                        <img class="btn-icon play" width="12" src="https://github.com/hyeongjinnnnn/opic-automatic-grading/assets/74162198/5f657ccf-f79f-4288-a6e5-ba238944671e">
+                    </button>
+                    <button id="startRecording">
+                        <img class="btn-icon record" width="16" src="https://github.com/hyeongjinnnnn/opic-automatic-grading/assets/74162198/f66a8e1c-0925-406d-9a84-393dd0ba6d0c">
+                    </button>
+                </div>
+            </div>
+            <div class="right">
+                <h3 class="question-number-title">문항 진행:</h3>
+                <ul class="prompt-list">
+                    {% for i in range(10) %}
+                        <li 
+                        {% if (i + 1) == question_page_number %} class="active" {% endif %}
+                        {% if (i + 1) < question_page_number %} class="visited" {% endif %}
+                        > {{ i + 1 }} </li>
+                    {% endfor %}
+                </ul>
+                <ul class="prompt-list">
+                    {% for i in range(10, 15) %}
+                        <li 
+                        {% if (i + 1) == question_page_number %} class="active" {% endif %}
+                        {% if (i + 1) < question_page_number %} class="visited" {% endif %}
+                        > {{ i + 1 }} </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="question-next">
+                <div class="form-group">
+                    <button id="stopRecording">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="{{ url_for('static',filename='question_page.js') }}"></script>
+</body>
+</html>

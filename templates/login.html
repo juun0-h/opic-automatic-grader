@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/login.css">
+</head>
+<body>
+    <form action="/login" method="POST">
+        <h2>Oral Proficiency Interview - computer (OPIc)</h2>
+        <div class="group">
+            <label for="studentID">Student ID</label>
+            <input type="text" name="studentID" required>
+        </div>
+        <div class="group">
+            <label for="name">Name</label>
+            <input type="text" name="name" required>
+        </div>
+        <div class="group center">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</body>
+</html>

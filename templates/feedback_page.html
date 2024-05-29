@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='feedback_page.css') }}">
+</head>
+<body>
+<div class="content">
+    <form id="return-score-form" action="/show_score" method="post">
+        <form>
+            <input type="button" value="Back" onclick="history.back()">
+        </form>
+        <h2> 1번~15번 피드백 </h2>
+        <div class="feedback-section">
+            <ul>
+                {% for i in range(15) %}
+                    <li>
+                        <h3>{{ i + 1 }}번</h3>
+                        <div class="feedback-qna">
+                            <h4 class="question">Q.  {{ questions[i] }}</h4>
+                            <h4 class="answer">A.  {{ stt[i] }}</h4>
+                        </div>
+                        <div class="feedback-output">
+                            <p>{{ feedbackOutput[i]|replace('\n', '<br>')|safe }}</p><br><br>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </form>
+</div>
+</body>
+</html>

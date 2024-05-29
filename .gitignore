@@ -1,0 +1,11 @@
+__pycache__/
+.pyc
+
+# records
+records/*.wav
+
+# model
+model
+
+# Database credentials and API keys
+.env

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Score</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='show_score_page.css') }}">
+</head>
+<body>
+<div class="container">
+    <form id="feedback-form" action="/feedback" method="post">
+        <h2>당신의 최종 오픽등급은 <strong>{{ grade }}</strong>입니다.</h2>
+        <strong>각 문항에 대해 만점은 5점입니다.</strong>
+        <ul>
+            {% for i in range(15) %}
+                <li>{{ i + 1 }}번 문항에 대한 점수: {{ scores[i] }}점</li>
+                <input type="hidden" name="feedback-output[]" value="{{ feedbackOutput[i] }}">
+            {% endfor %}
+        </ul>
+        <button type="submit" id="feedback-btn" name="feedback">피드백 보러가기</button>
+    </form>
+</div>
+<script src="{{ url_for('static',filename='show_score_page.js') }}"></script>
+</body>
+</html>

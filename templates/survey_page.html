@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/survey_page.css">
+    <title>Background Survey</title>
+</head>
+<body>
+    <div class="content">
+        <h2 class="survey-title">Background Survey</h2>
+        <p class="survey-instruction">질문을 읽고 정확히 답변해 주시기 바랍니다. 설문에 대한 응답을 기초로 개인별 문항이 출제됩니다.</p>
+        <form id="survey-form" action="/survey" method="post">
+            <h2 id="survey-progress">Part {{ survey_page }} of 3</h2>
+            <p class="survey-question">{{question}}</p>
+            {% if survey_page == 3 %}
+                {% for option in options %}
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="option" value="{{ option }}" {% if selected_option and option in selected_option %} checked {% endif %}>
+                            {{ option }}
+                        </label>
+                    </div>
+                {% endfor %}
+            {% else %}
+                {% for option in options %}
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="option" value="{{ option }}" {% if selected_option == option %} checked {% endif %}>
+                            {{ option }}
+                        </label>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <input type="hidden" name="survey-page" value="{{ survey_page }}">
+            <div class="survey-button">
+                <div class="button-area survey-left">
+                    <button type="submit" id="back-btn" name="next-page-direction" value="back" {% if survey_page == 1 %} disabled {% endif %}>
+                        Back
+                    </button>
+                </div>
+                <div class="button-area survey-right">
+                    <button type="submit" id="next-btn" name="next-page-direction" value="next" disabled>
+                        Next
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+
+    <script>
+        window.onload = function() {
+        const radioButtons = document.querySelectorAll('input[type=radio]');
+        const checkboxes = document.querySelectorAll('input[type=checkbox]');
+        const nextButton = document.getElementById('next-btn');
+
+        function updateNextButton() {
+            let isChecked = false;
+            if (document.querySelectorAll('input[type=radio]:checked').length > 0) {
+                isChecked = true;
+            } else if (document.querySelectorAll('input[type=checkbox]:checked').length >= 2) {
+                isChecked = true;
+            }
+            nextButton.disabled = !isChecked;
+        }
+
+        radioButtons.forEach(function(button) {
+            if (button.checked) {
+                updateNextButton();
+            }
+
+            button.addEventListener('change', function() {
+                updateNextButton();
+            });
+        });
+
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                updateNextButton();
+            });
+        });
+
+        // 페이지가 로드될 때마다 Next 버튼 업데이트
+        updateNextButton();
+    }
+    </script>
+</body>
+</html>

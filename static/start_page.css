@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Pretendard', sans-serif;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    height: 80%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    max-width: 96.2rem;
+    min-width: 68rem;
+    display: flex;
+    flex-direction: column;
+    margin-right: -15px;
+    margin-left: -15px;
+    position: relative;
+    margin-top: 3rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.opic-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: blue;
+    margin: 1em 0;
+}
+
+.content p {
+    font-size: 1.3em;
+}
+
+#form-next {
+    margin-top: 4em;
+}
+
+button {
+    color: #fff;
+    background-color: #f63;
+    border-color: #f63;
+    height: 2.2rem;
+    padding: 0 2rem;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 2px 1px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5;
+}

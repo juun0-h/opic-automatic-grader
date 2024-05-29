@@ -1,0 +1,193 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Pretendard', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 30px;
+    color: #222;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    word-break: keep-all;
+    margin: 0;
+    text-align: left;
+    background-color: #fff;
+}
+
+div {
+    display: block;
+}
+
+.content {
+    height: 80%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    max-width: 96.2rem;
+    min-width: 68rem;
+    display: flex;
+    flex-direction: column;
+    margin-right: -15px;
+    margin-left: -15px;
+    position: relative;
+}
+
+.content h2.survey-title {
+    margin-top: 1.4rem;
+}
+
+.content p.survey-instruction {
+    margin-top: 1.4rem;
+}
+
+.content .survey-question {
+    font-size: 1.1rem;
+    margin: 0 auto 10px;
+    padding-top: 6px;
+}
+
+.content .form-check {
+    margin-bottom: 0.6rem;
+}
+
+.content .form-check-label {
+    margin-left: 1.25rem;
+}
+
+.content .form-check-input {
+    margin-left: -1.2rem;
+}
+
+h2.survey-title {
+    border-bottom: 1px solid #ced4da;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 10px 0;
+}
+
+h2 {
+    line-height: 1.2;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom: .5rem;
+    margin-top: 1em;
+}
+
+p {
+    margin-bottom: 1rem;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+label {
+    display: inline-block;
+    cursor: default;
+}
+
+input {
+    overflow: visible;
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+input[type="radio"] {
+    padding: 0;
+}
+
+input[type="radio" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    border: initial;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    padding: 0;
+}
+
+.form-check {
+    position: relative;
+    display: block;
+}
+
+.form-check-label {
+    margin-bottom: 0;
+}
+
+.form-check-input {
+    position: absolute;
+    margin-top: .3rem;
+}
+
+.survey-button {
+    margin-top: 4rem !important;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button-area {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.survey-left {
+    text-align: left !important;
+}
+
+.survey-right {
+    text-align: right !important;
+}
+
+button {
+    color: #fff;
+    background-color: #f63;
+    border-color: #f63;
+    height: 2.2rem;
+    padding: 0 2rem;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 2px 1px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+button:disabled {
+    cursor: default;
+    opacity: .65;
+}

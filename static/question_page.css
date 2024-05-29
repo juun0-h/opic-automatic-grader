@@ -1,0 +1,301 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Pretendard', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 30px;
+    color: #222;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    word-break: keep-all;
+    margin: 0;
+    text-align: left;
+    background-color: #fff;
+}
+
+div {
+    display: block;
+}
+
+.content {
+    height: 80%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    max-width: 96.2rem;
+    min-width: 68rem;
+    display: flex;
+    flex-direction: column;
+    margin-right: -15px;
+    margin-left: -15px;
+    position: relative;
+}
+
+.content h2.question-title {
+    margin-top: 1.4rem;
+}
+
+h2.question-title {
+    border-bottom: 1px solid #ced4da;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 10px 0;
+}
+
+h2 {
+    line-height: 1.2;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom: .5rem;
+    margin-top: 1em;
+}
+
+.test-area {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 2rem !important;
+}
+
+.left {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.right {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.question-image {
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center !important;
+    flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+    position: relative;
+    width: 100%;
+}
+
+.ava {
+    display: inline-block;
+    height: 20.4rem !important;
+    width: 20rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    vertical-align: top;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: #000;
+    position: relative;
+    padding: 0;
+    line-height: 1;
+    cursor: auto;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    box-sizing: inherit;
+}
+
+.question-gauge {
+    padding-right: 0;
+    padding-left: 0;
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+    position: relative;
+    width: 100%;
+    height: 20.4rem;
+    display: flex;
+    flex-direction: column;
+    width: 1rem;
+}
+
+.question-gauge .volume-meter {
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    margin-left: .5rem;
+    width: .5rem;
+}
+
+.question-gauge .volume-meter .volume-value {
+    background-color: #36f;
+    height: 100%;
+    position: relative;
+}
+
+.question-gauge .mic-icon {
+    width: 1.5rem;
+}
+
+.question-buttons {
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center !important;
+    flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+    position: relative;
+    width: 100%;
+    margin-top: 1rem !important;
+    margin-left: .8rem;
+}
+
+button {
+    color: #fff;
+    background-color: #f63;
+    border-color: #f63;
+    height: 2.2rem;
+    padding: 0 2rem;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 2px 1px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5;
+    margin-right: 2rem;
+}
+
+button:disabled {
+    cursor: default;
+    opacity: .65;
+}
+
+.btn-icon {
+    filter: invert(1);
+}
+
+.play {
+    margin-top: .5rem;
+}
+
+.record {
+    margin-top: .5rem;
+}
+
+.question-number-title {
+    margin-top: 3rem !important;
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.prompt-list li {
+    background-color: #e9ecef;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2);
+    color: #adb5bd;
+    display: inline-block;
+    font-weight: bold;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: .5rem;
+    text-align: center;
+    width: 2.5rem;
+}
+
+.prompt-list li.active {
+    background-color: #495057;
+    color: #fff;
+}
+
+.prompt-list li.visited {
+    background-image: url(https://opickoreademo.multicampus.com/images/test-visited-bg.png);
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 0;
+    margin-bottom: -1rem;
+}
+
+.question-next {
+    margin-top: 3rem !important;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    text-align: right !important;
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 0;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.form-group {
+    display: block;
+    margin-top: 0em;
+    margin-bottom: 1rem;
+}

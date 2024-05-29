@@ -1,0 +1,6 @@
+flask
+mysql-connector-python
+torch
+transformers
+huggingface-hub
+langchain-community
