@@ -14,7 +14,7 @@
 ## 기술 스택
 
 - **백엔드**: FastAPI, Python 3.8+
-- **데이터베이스**: MySQL with SQLAlchemy ORM
+- **데이터베이스**: PostgreSQL with SQLAlchemy ORM
 - **ML/AI**: PyTorch, Transformers, Hugging Face
 - **인증**: JWT (JSON Web Tokens)
 - **비동기 처리**: Redis, Celery
