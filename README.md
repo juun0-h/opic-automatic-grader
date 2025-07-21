@@ -25,7 +25,6 @@
 ```
 opic-automatic-grader/
 ├── main.py              # FastAPI 애플리케이션 엔트리포인트
-├── app.py              # 레거시 애플리케이션 (마이그레이션 중)
 ├── requirements.txt    # Python 의존성
 │
 ├── api/               # API 라우터 및 엔드포인트
