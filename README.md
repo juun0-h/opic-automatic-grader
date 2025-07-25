@@ -25,7 +25,7 @@
 ```
 opic-automatic-grader/
 ├── main.py              # FastAPI 애플리케이션 엔트리포인트
-├── requirements.txt    # Python 의존성
+├── pyproject.toml      # uv 프로젝트 설정 및 의존성
 │
 ├── api/               # API 라우터 및 엔드포인트
 │   ├── auth.py       # 인증 관련 API
@@ -62,18 +62,19 @@ opic-automatic-grader/
 
 ### 1. 환경 설정
 
+이 프로젝트는 `uv`를 사용하여 의존성을 관리합니다.
+
 ```bash
-# 가상환경 생성
-python -m venv venv
+# uv 설치 (필요한 경우)
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# 가상환경 활성화 (Windows)
-venv\Scripts\activate
+# 의존성 설치 및 가상환경 생성
+uv sync
 
-# 가상환경 활성화 (macOS/Linux)
-source venv/bin/activate
-
-# 의존성 설치
-pip install -r requirements.txt
+# 가상환경 활성화
+source .venv/bin/activate  # macOS/Linux
+# 또는
+.venv\Scripts\activate     # Windows
 ```
 
 ### 2. 데이터베이스 설정
@@ -90,10 +91,10 @@ UPLOAD_FOLDER=./records
 ### 3. 애플리케이션 실행
 
 ```bash
-# 개발 모드
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+# uv를 사용한 개발 모드
+uv run uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
-# 또는
+# 또는 가상환경 활성화 후
 python main.py
 ```
 
@@ -142,11 +143,11 @@ python main.py
 ## 개발 및 테스트
 
 ```bash
-# 테스트 실행
-pytest
+# uv를 사용한 테스트 실행
+uv run pytest
 
 # 비동기 테스트
-pytest -v tests/
+uv run pytest -v tests/
 ```
 
 ## ML 모델 구조

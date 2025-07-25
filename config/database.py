@@ -7,7 +7,7 @@ from typing import Generator
 from .settings import settings
 
 # Database URL
-DATABASE_URL = f"mysql+pymysql://{settings.db_user}:{settings.db_password}@{settings.db_host}/{settings.db_database}"
+DATABASE_URL = f"postgresql://{settings.db_user}:{settings.db_password}@{settings.db_host}/{settings.db_database}"
 
 # Engine with connection pooling
 engine = create_engine(
